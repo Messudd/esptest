@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,6 @@ function App() {
     axios
       .post("https://b4b0-82-222-123-251.ngrok-free.app/led", { state }) // Ngrok URL'sini buraya ekleyin
       .then((res) => {
-        sound.play();
         console.log("status: ", res.data);
         setValue(res.data);
       })
@@ -23,6 +22,10 @@ function App() {
         console.error("There was an error updating the LED state!", err);
       });
   };
+
+  useEffect(() => {
+    sound.play();
+  },[value])
 
   return (
     <>
