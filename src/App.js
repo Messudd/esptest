@@ -18,7 +18,7 @@ function App() {
     axios
       .post("https://b4b0-82-222-123-251.ngrok-free.app/led", { state }) // Ngrok URL'sini buraya ekleyin
       .then((response) => {
-        console.log("LED state updated");
+        console.log("status: ",response);
       })
       .catch((error) => {
         console.error("There was an error updating the LED state!", error);
