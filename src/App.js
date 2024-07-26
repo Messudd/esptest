@@ -13,7 +13,7 @@ function App() {
 
   const toggleLED = (state) => {
     axios
-      .post("https://b4b0-82-222-123-251.ngrok-free.app/led", { state }) // Ngrok URL'sini buraya ekleyin
+      .post("https://f593-82-222-123-251.ngrok-free.app/led", { state }) // Ngrok URL'sini buraya ekleyin
       .then((res) => {
         console.log("status: ", res.data);
         setValue(res.data);
